@@ -141,7 +141,7 @@ async function startOrStop() {
     isRunning = true
     for (let i = 3; i > 0; i--) {
       caption.value = currentText.value = String(i)
-      t = await waitAndPlayBuffer(t, 1, countBuffer[i - 1])
+      t = await waitAndPlayBuffer(t, 1, countBuffer[i - 1]!)
       if (isStopping) {
         return
       }

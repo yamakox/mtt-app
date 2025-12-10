@@ -20,8 +20,8 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 onMounted(() => {
-  if (routes.length > 0 && routes[0].path !== route.path) {
-    homeRoute.value = routes[0]
+  if (routes.length > 0 && routes[0]!.path !== route.path) {
+    homeRoute.value = routes[0]!
   }
   const index = routes.findIndex((i) => i.path === route.path)
   if (index > -1) {
