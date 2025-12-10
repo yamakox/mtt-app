@@ -1,0 +1,203 @@
+@import 'tailwindcss';
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --nav-bar-height: 3rem;
+  --max-width: 800px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #ffffe0;
+    --title-color: blue;
+    --description-color: rgb(0, 160, 0);
+    --description-a-color: rgb(0, 128, 0);
+    --nav-bg-color: #ffffe0ee;
+    color: black;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #121212;
+    --title-color: lightblue;
+    --description-color: rgb(0, 192, 0);
+    --description-a-color: rgb(0, 224, 0);
+    --nav-bg-color: #121212ee;
+    color: white;
+  }
+}
+
+/* iPhoneのSafariで横スクロールが出ないようにする */
+/* https://stackoverflow.com/questions/15879710/disabling-horizontal-scroll-on-an-iphone-website */
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+}
+
+#app {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.main {
+  padding: var(--nav-bar-height) 1rem 1rem 1rem;
+  width: 100%;
+  max-width: var(--max-width);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.error {
+  margin: 0.5rem 1rem;
+  background-color: red;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+}
+
+.title {
+  padding: 0;
+  margin: 0.5rem 0;
+  color: var(--title-color);
+}
+
+.illustration-container {
+  position: fixed;
+  margin: 5rem 0 0 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  opacity: 0.3;
+  z-index: -100;
+}
+.illustration {
+  margin: 0;
+  max-width: 70vw;
+  max-height: 40vh;
+  height: auto;
+}
+
+.description {
+  margin: 0.5rem 0;
+  color: var(--description-color);
+}
+
+.description a {
+  color: var(--description-a-color);
+}
+
+.content {
+  margin: 0.5rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  color: var(--description-color);
+}
+
+.content a {
+  color: var(--description-a-color);
+}
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  margin: 0;
+  padding: 1rem 1rem;
+  width: 100%;
+  max-width: var(--max-width);
+  height: var(--nav-bar-height);
+  line-height: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--description-a-color);
+  background-color: var(--nav-bg-color);
+  z-index: 9999;
+}
+
+.nav-link {
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+.nav-link.left {
+  margin: 0 0 0 0.25rem;
+  width: 44%;
+  text-align: left;
+  font-weight: bold;
+}
+
+.nav-link.center {
+  margin: 0 0 0 0;
+  width: 12%;
+  text-align: center;
+}
+
+.nav-link.right {
+  margin: 0 0.25rem 0 0;
+  width: 44%;
+  text-align: right;
+  font-weight: bold;
+}
+
+.nav-link.arrow {
+  margin: 0;
+}
+
+.fancy-button {
+  padding: 0 1rem;
+  margin: 0.5rem 0 1rem 0;
+  width: 100%;
+  min-height: 6rem;
+  color: black;
+  background: linear-gradient(135deg, #fdece3, #ff9191);
+  border: 1px solid #2196f3;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  color: #495057;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  &:active:not(:disabled) {
+    background: linear-gradient(135deg, #ff9191, #ff9191);
+    transform: translateY(1px);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  }
+  &:disabled {
+    color: gray;
+    background: linear-gradient(135deg, #f0f0f0, #dcdcdc);
+    border: 1px solid #8e8e8e;
+    transform: translateY(1px);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    cursor: not-allowed;
+  }
+}

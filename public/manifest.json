@@ -1,0 +1,19 @@
+{
+  "name": "下腹部を鍛える筋トレタイマー",
+  "short_name": "筋トレタイマー",
+  "display": "browser",
+  "background_color": "lightyellow",
+  "theme_color": "lightyellow",
+  "icons": [
+    {
+      "src": "favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
